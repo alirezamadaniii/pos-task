@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layoutDirection="rtl"
+    tools:context=".presentation.ui.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_builder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/message_builder"
+            android:textStyle="bold"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/pan"
+            android:fontFamily="@font/estedad_fd_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_builder_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:fontFamily="@font/estedad_fd_medium"
+                android:maxLength="19"
+                tools:text="1274123451789012" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/transaction_pay"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/estedad_fd_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_pan">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:fontFamily="@font/estedad_fd_medium"
+                tools:text="5000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_build_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/create_message"
+            android:fontFamily="@font/estedad_fd_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_amount" />
+
+        <TextView
+            android:id="@+id/tv_parser_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/message_parser"
+            android:textStyle="bold"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_build_message" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_hex_message_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:hint="@string/all_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_parser_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_hex_message_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="3"
+                android:fontFamily="@font/estedad_fd_medium"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:textSize="12sp"
+                tools:text="0200522000000000000012741234517890120000000050000701143022000001" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_parse_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/Message_Parser"
+            android:fontFamily="@font/estedad_fd_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_hex_message_input" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/btn_parse_message" />
+
+        <TextView
+            android:id="@+id/tv_output_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/all_message_filed"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_full_message_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/all_mesagee"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_output_title" />
+
+        <TextView
+            android:id="@+id/tv_full_message_hex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="8dp"
+            android:background="#EEEEEE"
+            android:fontFamily="@font/estedad_fd_medium"
+            android:textSize="12sp"
+            android:textIsSelectable="true"
+            tools:text="0200522000000000000012741234517890120000000050000701143022000001"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_full_message_label" />
+
+        <TextView
+            android:id="@+id/tv_fields_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/extract_filed"
+            android:textStyle="italic"
+            android:fontFamily="@font/estedad_fd_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_full_message_hex" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fields"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_fields_label"
+            tools:layout_editor_absoluteY="800dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_iso_field" /> </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

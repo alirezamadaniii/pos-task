@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PosTask</string>
+    <string name="message_builder">ساخت پیام</string>
+    <string name="pan">شماره کارت</string>
+    <string name="transaction_pay">مبلغ تراکنش</string>
+    <string name="create_message">ساخت پیام</string>
+    <string name="message_parser">پارس پیام</string>
+    <string name="all_message">پیام کامل</string>
+    <string name="Message_Parser">پارس پیام</string>
+    <string name="all_message_filed">خروجی: پیام کامل و جزئیات فیلدها</string>
+    <string name="all_mesagee">پیام کامل:</string>
+    <string name="extract_filed">فیلدهای استخراج شده:</string>
+    <string name="field_0">Field 0</string>
+    <string name="value">Value</string>
+    <string name="description">Description</string>
+</resources>
